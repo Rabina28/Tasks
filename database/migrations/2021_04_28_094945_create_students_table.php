@@ -14,7 +14,7 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
             $table->date('dob');
@@ -39,6 +39,32 @@ class CreateStudentsTable extends Migration
             $table->string('bus_needed');
             $table->string('pickup_address');
             $table->timestamps();
+        });
+        Schema::create('grades', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('student_id');
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->string('alt_name');
+            $table->string('status');
+            $table->timestamps();
+            $table->foreign('student_id')
+                    ->references('id')
+                    ->on('students')
+                    ->ondelete('cascade');
+        });
+         Schema::create('sections', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('student_id');
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->string('alt_name');
+            $table->string('status');
+            $table->timestamps();
+            $table->foreign('grade_id')
+                    ->references('id')
+                    ->on('students')
+                    ->ondelete('cascade');
         });
     }
 

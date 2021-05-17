@@ -118,8 +118,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="m_number">Email</label>
-                                            <input type="email" value="{{ $student->m_email }}" class="form-control" placeholder="m_number" name="m_number" id="m_number">
+                                            <label for="m_email">Email</label>
+                                            <input type="email" value="{{ $student->m_email }}" class="form-control" placeholder="m_email" name="m_email" id="m_email">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
