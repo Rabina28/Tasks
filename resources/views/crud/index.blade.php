@@ -28,7 +28,6 @@
                         <th>c_address</th>
                         <th>f_name</th>
                         <th>f_number </th>
-
                         <th>grade</th>
                         <th style="width:200px;">Action</th>
                         <th style="width:200px;">Status</th>

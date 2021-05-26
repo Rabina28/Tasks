@@ -81,8 +81,26 @@
     </style>
 </head>
 <body>
-<div class="footer">
-    <p>APPLICATION FORM</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="text-align: center;">
+                <p>For more information please contact us on following details.</p>
+                <ul style="list-style: none;">
+                    <li>
+                        <i class="fas fa-map-marker-alt">
+
+                        </i> <a href="#">ABC Higher Secondary School</a>
+                    </li>
+                    <li><i class="fas fa-phone-volume">
+
+                        </i> <a href="tel:010-520203">011-683538</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+
 </body>
 </html>

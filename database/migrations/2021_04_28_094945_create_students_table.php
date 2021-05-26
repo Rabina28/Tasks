@@ -53,19 +53,7 @@ class CreateStudentsTable extends Migration
                     ->on('students')
                     ->ondelete('cascade');
         });
-         Schema::create('sections', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('student_id');
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->string('alt_name');
-            $table->string('status');
-            $table->timestamps();
-            $table->foreign('grade_id')
-                    ->references('id')
-                    ->on('students')
-                    ->ondelete('cascade');
-        });
+        
     }
 
     /**
