@@ -45,8 +45,8 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm col-md-6">
-                            <label for="dateofoirth"> Date of Birth <span class="error">* </span> </label>
-                            <input type="date" class="form-control"  placeholder="Date of Birth" name="dateOfBirth" id="dateOfBirth" required autocomplete="dateofbirth" autofocus >
+                            <label for="dob">Date of Birth <span class="error">* </span></label>
+                            <input type="date"  class="form-control" placeholder="dob" name="dob" id="dob" >
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">

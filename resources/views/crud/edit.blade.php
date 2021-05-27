@@ -23,8 +23,9 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ route('application.update',$student->id) }}" method="post">
+                <form action="{{ route('application.update',$student->id) }}" method="POST">
                     {{ csrf_field() }}
+                    {{ method_field('PUT') }}
                     <div class="row">
                         <div class="col-md-5">
                             <div class="form-group">
@@ -40,7 +41,7 @@
                         </div>
                         <div class="form-group form-group-sm col-md-5">
                             <label for="dob">Date of Birth</label>
-                            <input type="date" value="{{ $student->dob }}" class="form-control" placeholder="dob" name="dob" id="dob" >
+                            <input type="date"  value="{{ $student->dob }}" class="form-control" placeholder="dob" name="dob" id="dob" >
                         </div>
                         <div class="col-md-5">
                             <div class="form-group">

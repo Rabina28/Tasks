@@ -28,7 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', function () {
     return view('admin.dashboard');
 });
-Route::get('home', [DashboardController::class,'index']);
+Route::get('/home', [DashboardController::class,'index']);
 Route::get('students-show/{id}', [DashboardController::class,'show']);
 Route::get('dashboard/{id}', [DashboardController::class,'edit']);
 Route::put('students-update/{id}', [DashboardController::class,'update']);

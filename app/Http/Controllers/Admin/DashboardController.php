@@ -53,7 +53,7 @@ class DashboardController extends Controller
         $students->pickup_address = $request->input('pickup_address');
         $students->update();
 
-        return redirect('home')->with('students', 'student sata is successfully updated');
+        return redirect('home')->with('students', 'student data is successfully updated');
     }
 
 
