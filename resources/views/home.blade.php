@@ -54,15 +54,15 @@
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <ul class="nav">
                 <li>
-                    <a href="/dashboard.html">
+                    <a href="/index">
                         <i class="now-ui-icons design_app"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
                     <a href="/home">
-                        <i class="now-ui-icons education_atom"></i>
-                        <p>Application</p>
+                        <i class="now-ui-icons design_bullet-list-67"></i>
+                        <p>Application List</p>
                     </a>
                 </li>
             </ul>

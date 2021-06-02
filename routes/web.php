@@ -19,8 +19,10 @@ Route::get('/', function () {
 
 });
 
+//application routes
 Route::resource('/application', 'CRUDController');
 
+//login register routes
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -28,9 +30,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', function () {
     return view('admin.dashboard');
 });
+
+
+//dashboard routes
+
+//Route::resource('/home', 'Admin\DashboardController');
 Route::get('/home', [DashboardController::class,'index']);
 Route::get('students-show/{id}', [DashboardController::class,'show']);
 Route::get('dashboard/{id}', [DashboardController::class,'edit']);
 Route::put('students-update/{id}', [DashboardController::class,'update']);
 Route::delete('students-delete/{id}', [DashboardController::class,'delete']);
 
+
+Route::get('/index', function () {
+    return view('admin.index');
+});

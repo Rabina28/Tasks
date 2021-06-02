@@ -2,7 +2,7 @@
 @extends('home')
 
 @section('title')
-    Dashboard
+    Index
 @endsection
 
 @section('content')
@@ -54,8 +54,8 @@
                                         </form>
                                     </td>
                                 </tr>
-                            </tbody>
                             @endforeach
+                            </tbody>
                         </table>
 
                     </div>

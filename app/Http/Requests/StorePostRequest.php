@@ -46,7 +46,8 @@ class StorePostRequest extends FormRequest
                 'grade' => 'required',
                 'last_school' => 'required',
                 'bus_needed' => 'nullable',
-                'pickup_address' => 'nullable|min:2|max:100'
+                'pickup_address' => 'nullable|min:2|max:100',
+                'timestamps' => 'required'
 
 
         ];
