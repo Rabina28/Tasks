@@ -26,7 +26,7 @@
                 <div class="card card-chart">
                     <div class="card-header">
                         <h5 class="card-category">Email Statistics</h5>
-                        <h4 class="card-title">This year={{{ App\Models\Student::whereYear('created_at', today()->year)->count() }}}</h4>
+                        <h4 class="card-title">This month={{{ App\Models\Student::whereMonth('created_at', today()->month)->count() }}}</h4>
                     </div>
 
                     <div class="card-footer">

@@ -57,9 +57,9 @@
                             <div class="col-md-5">
                                 <label for="gender" class= "col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
                                 <div class="form-check form-check-inline" >
-                                    <input value="{{ $students->gender }}" class="form-check-input" type="radio" name="gender" >
+                                    <input value="male" {{ $students->gender || old('gender') == 'male' ? 'checked' : '' }} class="form-check-input" type="radio" name="gender" >
                                     <label class="form-check-label" for="male">Male</label>
-                                    <input value="{{ $students->gender }}" class="form-check-input" type="radio" name="gender" >
+                                    <input value="female" {{ $students->gender || old('gender') == 'female' ? 'checked' : '' }}  class="form-check-input" type="radio" name="gender" >
                                     <label class="form-check-label" for="female">Female</label>
                                 </div>
                             </div>
@@ -189,11 +189,11 @@
                             <div class="col-md-4">
                                 <label for="bus_needed" class= "col-md-4 col-form-label text-md-right">{{ __('School bus needed') }}</label>
                                 <div class="form-check form-check-inline" >
-                                    <input value="{{ $students->bus_needed }}" class="form-check-input" type="radio" name="bus_needed">
+                                    <input value="yes" {{ $students->bus_needed || old('bus_needed') == 'yes' ? 'checked' : '' }} class="form-check-input" type="radio" name="bus_needed">
                                     <label class="form-check-label" for="yes">Yes</label>
-                                    <input  value="{{ $students->bus_needed }}" class="form-check-input" type="radio" name="bus_needed">
+                                    <input  value="no" {{ $students->bus_needed || old('bus_needed') == 'no' ? 'checked' : '' }} class="form-check-input" type="radio" name="bus_needed">
                                     <label class="form-check-label" for="no">No</label>
-                                    <input  value="{{ $students->bus_needed }}" class="form-check-input" type="radio" name="bus_needed">
+                                    <input  value="not_sure" {{ $students->bus_needed || old('bus_needed') == 'not_sure' ? 'checked' : '' }} class="form-check-input" type="radio" name="bus_needed">
                                     <label class="form-check-label" for="no">Not sure</label>
                                 </div>
                             </div>
@@ -206,8 +206,8 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="{{url('home')}}" class="btn btn-secondary" data-dismiss="modal">Back</a>
+                    <button type="submit" class="btn btn-success">Update</button>
+                    <a href="{{url('index')}}" class="btn btn-secondary" data-dismiss="modal">Back</a>
                 </form>
             </div>
         </div>

@@ -51,9 +51,9 @@ class DashboardController extends Controller
         $students->last_school = $request->input('last_school');
         $students->bus_needed = $request->input('bus_needed');
         $students->pickup_address = $request->input('pickup_address');
-        $students->update();
+        $students->save();
 
-        return redirect('home')->with('students', 'student data is successfully updated');
+        return redirect('index')->with('students', 'student data is successfully updated');
     }
 
 
@@ -63,7 +63,7 @@ class DashboardController extends Controller
         $students = Student::findOrFail($id);
         $students->delete();
 
-        return redirect('home')->with('students', 'student data is deleted successfully');
+        return redirect('index')->with('students', 'student data is deleted successfully');
 
     }
 

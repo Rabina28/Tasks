@@ -2,8 +2,6 @@
 @extends('home')
 
 
-@extends('crud.main')
-
 @section('content')
     <div class="container">
         <div class="jumbotron">
@@ -51,18 +49,20 @@
                     <div class="col-md-6">
                         <label for="gender" class= "col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
                         <div class="form-check form-check-inline" >
-                            <input disabled value="{{ $students->gender }}" class="form-check-input" type="radio" name="gender">
+                            <input disabled value="male" {{ $students->gender || old('gender') == 'male' ? 'checked' : '' }} class="form-check-input" type="radio" name="gender">
                             <label class="form-check-label" for="male">Male</label>
-                            <input disabled value="{{ $students->gender }}" class="form-check-input" type="radio" name="gender" >
+                            <input disabled value="female" {{ $students->gender || old('gender') == 'female' ? 'checked' : '' }} class="form-check-input" type="radio" name="gender" >
                             <label class="form-check-label" for="female">Female</label>
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Contact Information
                     </div>
                 </div>
+                <br>
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         Father's Information
@@ -182,11 +182,11 @@
                         <div class="col-md-4">
                             <label for="bus_needed" class= "col-md-4 col-form-label text-md-right">{{ __('School bus needed') }}</label>
                             <div class="form-check form-check-inline" >
-                                <input disabled value="{{ $students->bus_needed }}" class="form-check-input" type="radio" name="bus_needed">
+                                <input disabled value="yes" {{ $students->bus_needed || old('bus_needed') == 'yes' ? 'checked' : '' }} class="form-check-input" type="radio" name="bus_needed">
                                 <label class="form-check-label" for="yes">Yes</label>
-                                <input disabled value="{{ $students->bus_needed }}" class="form-check-input" type="radio" name="bus_needed">
+                                <input disabled value="no" {{ $students->bus_needed || old('bus_needed') == 'no' ? 'checked' : '' }} class="form-check-input" type="radio" name="bus_needed">
                                 <label class="form-check-label" for="no">No</label>
-                                <input disabled value="{{ $students->bus_needed }}" class="form-check-input" type="radio" name="bus_needed">
+                                <input disabled value="not_sure" {{ $students->bus_needed || old('bus_needed') == 'not_sure' ? 'checked' : '' }} class="form-check-input" type="radio" name="bus_needed">
                                 <label class="form-check-label" for="no">Not sure</label>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{url('home')}}" class="btn btn-secondary" data-dismiss="modal">Back</a>
+                <a href="{{url('index')}}" class="btn btn-secondary" data-dismiss="modal">Back</a>
             </div>
             </form>
 

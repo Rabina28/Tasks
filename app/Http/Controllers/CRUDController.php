@@ -20,8 +20,9 @@ class CRUDController extends Controller
     {
        // $student = $this->getStudentDetails(5);
         //dd($student);
+
         $students = Student::paginate(10);
-        return view('crud.index', compact('students'));
+        return view('crud.create');
     }
 
     /**
@@ -47,7 +48,7 @@ class CRUDController extends Controller
         // Validate the Field
         $student = new Student();
         $this->save($student, $request);
-        return redirect()->route('application.index')->with('message', 'New student created Successfull !');
+        return redirect()->route('application.create')->with('message', 'New student created Successfull !');
     }
 
 
@@ -59,7 +60,7 @@ class CRUDController extends Controller
      */
     public function show($id)
     {
-        $student = $this -> getStudentDetails($id);  
+        $student = $this -> getStudentDetails($id);
         //dd($student);
         return view('crud.read', compact('student'));
     }

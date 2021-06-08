@@ -1,5 +1,12 @@
 
+
+
+
 @extends('home')
+
+@section('css')
+    <link rel="stylesheet" href="https//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"/>
+    @endsection
 
 @section('title')
     Index
@@ -16,7 +23,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="table_id" class="table table-hover table-bordered table-stripped">
+                        <table class="table table-hover table-bordered table-stripped" id="table_id">
 
                             <thead class=" text-primary">
                             <tr>
@@ -45,12 +52,12 @@
                                     <td>{{$data->f_number}}</td>
                                     <td>{{$data->grade}}</td>
                                     <td>
-                                        <a href="{{url('dashboard/'.$data->id)}}" class="btn btn-success">EDIT</a>
+                                        <a href="{{url('home/'.$data->id)}}" class="btn btn-success">EDIT</a>
                                         <a href="{{ url('students-show/'.$data->id) }}" class="btn btn-xs btn-success">View</a>
                                         <form  method="post" action="{{ url('students-delete/'.$data->id) }}" class="delete_form">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-                                           <button type="submit" class="btn btn-danger">DELETE</button>
+                                            <button class="btn btn-xs btn-danger" type="submit" onclick="return confirm('Are You Sure? Want to Delete It.');">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -65,13 +72,15 @@
     </div>
 @endsection
 
-@section('js')
+@push('scripts')
+
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready( function () {
             $('#table_id').DataTable();
              } );
     </script>
-@endsection
+@endpush
 
 @section('scripts')
 @endsection
