@@ -71,6 +71,8 @@ return [
             'after_commit' => false,
         ],
 
+        
+
     ],
 
     /*
@@ -86,7 +88,7 @@ return [
 
     'failed' => [
         'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
-        'database' => env('DB_CONNECTION', 'mysql'),
+        'database' =>'pgsql',env('DB_CONNECTION', 'mysql'),
         'table' => 'failed_jobs',
     ],
 

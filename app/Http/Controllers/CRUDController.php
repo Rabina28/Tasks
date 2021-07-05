@@ -2,25 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OfficeMail;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Mail;
 Use App\Http\Requests\StorePostRequest;
 use App\Http\Traits\StudentTrait;
-
+use App\Mail\AppFormMail;
+use App\Jobs\SendEmailJob;
+use Carbon\Carbon;
 class CRUDController extends Controller
 {
+
     use StudentTrait;
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
        // $student = $this->getStudentDetails(5);
         //dd($student);
-
         $students = Student::paginate(10);
         return view('crud.create');
     }
@@ -43,11 +47,32 @@ class CRUDController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(StorePostRequest $request)
+    public function store(StorePostRequest $request )
     {
         // Validate the Field
         $student = new Student();
         $this->save($student, $request);
+
+        $student= [
+            'title' => 'your application has been submitted.',
+            'body' => 'we will contact you soon.'
+        ];
+        Mail::to('to@example.com')->send(new AppFormMail($student));
+
+        $student = (new SendEmailJob())
+            ->delay(Carbon::now()->addMinutes(1));
+        dispatch($student);
+
+
+         /**$student= [
+            'firstname'=> '',
+            'lastname' => '',
+             'gender' => ''
+        ];
+        Mail::to('to@example.com')->send(new OfficeMail($student)); **/
+
+
+
         return redirect()->route('application.create')->with('message', 'New student created Successfull !');
     }
 

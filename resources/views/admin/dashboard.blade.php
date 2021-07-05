@@ -52,12 +52,12 @@
                                     <td>{{$data->f_number}}</td>
                                     <td>{{$data->grade}}</td>
                                     <td>
-                                        <a href="{{url('home/'.$data->id)}}" class="btn btn-success">EDIT</a>
-                                        <a href="{{ url('students-show/'.$data->id) }}" class="btn btn-xs btn-success">View</a>
+                                        <a href="{{url('home/'.$data->id)}}" class="btn btn-primary btn-sm ">EDIT</a>
+                                        <a href="{{ url('students-show/'.$data->id) }}" class="btn btn-success btn-sm">View</a>
                                         <form  method="post" action="{{ url('students-delete/'.$data->id) }}" class="delete_form">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-                                            <button class="btn btn-xs btn-danger" type="submit" onclick="return confirm('Are You Sure? Want to Delete It.');">Delete</button>
+                                            <button class="btn btn-xs btn-danger btn-sm" type="submit" onclick="return confirm('Are You Sure? Want to Delete It.');">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

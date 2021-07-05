@@ -15,6 +15,7 @@ class DashboardController extends Controller
     public function show($id)
     {
         $students = Student::findOrFail($id);
+        //dd($students);
         return view('admin.student.read',compact('students'));
 
     }
@@ -62,7 +63,6 @@ class DashboardController extends Controller
     {
         $students = Student::findOrFail($id);
         $students->delete();
-
         return redirect('index')->with('students', 'student data is deleted successfully');
 
     }

@@ -44,8 +44,8 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm col-md-6">
-                            <label for="dob">Date of Birth <span class="error">* </span></label>
-                            <input type="date"  class="form-control" placeholder="Date of birth" name="dateofbirth" id="dob" value="{{old('dob')}}" >
+                            <label for="dateofbirth">Date of Birth <span class="error">* </span></label>
+                            <input type="date"  class="form-control" placeholder="Date of birth" name="dateofbirth" id="dateofbirth" value="{{old('dateofbirth')}}" >
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">

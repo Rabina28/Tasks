@@ -31,8 +31,8 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="dob">Date of Birth</label>
-                        <input type="text" disabled value="{{ $students->dob }}" class="form-control" placeholder="dob" name="dob" id="dob" >
+                        <label for="dateofbirth">Date of Birth</label>
+                        <input type="text" disabled value="{{ $students->dateofbirth }}" class="form-control" placeholder="dob" name="dateofbirth" id="dateofbirth" >
                     </div>
                     <div class="col-md-5">
                         <div class="form-group">

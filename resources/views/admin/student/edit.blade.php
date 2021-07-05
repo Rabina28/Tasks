@@ -38,8 +38,8 @@
                             </div>
                         </div>
                         <div class="form-group form-group-sm col-md-5">
-                            <label for="dob">Date of Birth</label>
-                            <input type="date" value="{{ $students->dob }}" class="form-control" placeholder="dob" name="dob" id="dob" >
+                            <label for="dateofbirth">Date of Birth</label>
+                            <input type="date" value="{{ $students->dateofbirth }}" class="form-control" placeholder="dob" name="dateofbirth" id="dateofbirth" >
                         </div>
                         <div class="col-md-5">
                             <div class="form-group">
@@ -206,7 +206,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success">Update</button>
+                    <button type="submit"class="btn btn-success">Update</button>
                     <a href="{{url('index')}}" class="btn btn-secondary" data-dismiss="modal">Back</a>
                 </form>
             </div>

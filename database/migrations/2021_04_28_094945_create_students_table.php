@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->date('dob');
+            $table->date('dateofbirth');
             $table->string('c_address');
             $table->string('p_address');
             $table->string('gender');
@@ -53,7 +53,7 @@ class CreateStudentsTable extends Migration
                     ->on('students')
                     ->ondelete('cascade');
         });
-        
+
     }
 
     /**
